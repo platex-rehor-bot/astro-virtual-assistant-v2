@@ -16,7 +16,7 @@ ADD docker/requirements-virtual-assistant.txt /app/
 RUN if [ -f /cachi2/cachi2.env ]; then \
       . /cachi2/cachi2.env && \
       python3 -m venv --system-site-packages .venv && \
-      .venv/bin/pip install -r requirements-virtual-assistant.txt && \
+      .venv/bin/pip install --no-build-isolation -r requirements-virtual-assistant.txt && \
       .venv/bin/pip install --no-deps --no-build-isolation \
         . ./libs/common ./services/virtual-assistant && \
       sed -i 's/include-system-site-packages = true/include-system-site-packages = false/' \
