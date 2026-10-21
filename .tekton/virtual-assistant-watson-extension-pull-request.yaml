@@ -32,7 +32,7 @@ spec:
   - name: hermetic
     value: "true"
   - name: prefetch-input
-    value: '[{"type":"pip","path":".","requirements_files":["docker/requirements-watson-extension.txt"],"binary":{"packages":":all:"}}]'
+    value: '[{"type":"pip","path":".","requirements_files":["docker/requirements-build.txt","docker/requirements-watson-extension.txt"],"binary":{"packages":":all:"}}]'
   pipelineRef:
     params:
     - name: url
